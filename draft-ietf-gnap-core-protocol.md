@@ -104,6 +104,8 @@ from the design team regarding the options as understood.
 
 Another test of stuff.
 
+This stuff might do things.
+
 This protocol allows a piece of software, the resource client, to request delegated
 authorization to resource servers and to request direct information. This delegation is
 facilitated by an authorization server usually on
