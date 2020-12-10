@@ -102,7 +102,7 @@ from the design team regarding the options as understood.
 
 # Introduction
 
-This is just to test the artifact on pull requests.
+Another test of stuff.
 
 This protocol allows a piece of software, the resource client, to request delegated
 authorization to resource servers and to request direct information. This delegation is
