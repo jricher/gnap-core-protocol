@@ -13,11 +13,11 @@ urlbase = 'https://api.github.com/repos/jricher/gnap-core-protocol/actions/artif
 with urllib.request.urlopen(urlbase) as url:
     data = json.loads(url.read().decode())
 
-    for a in data.artifacts:
-        if a.name == os.environ.artifact_tag:
+    for a in data['artifacts']:
+        if a['name'] == os.environ.artifact_tag:
             print('Downloading artifact %s' % artifact_tag)
             
-            req = urllib.request.Request(a.archive_download_url, headers={
+            req = urllib.request.Request(a['archive_download_url'], headers={
                 'Authorization: Bearer ' + token
             })
             
