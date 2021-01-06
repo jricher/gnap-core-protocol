@@ -5,7 +5,7 @@ import os
 
 print(os.environ)
 
-artifact_tag = os.environ'[artifact_tag]'
+artifact_tag = os.environ['artifact_tag']
 token = os.environ['GITHUB_TOKEN']
 
 urlbase = 'https://api.github.com/repos/jricher/gnap-core-protocol/actions/artifacts'
