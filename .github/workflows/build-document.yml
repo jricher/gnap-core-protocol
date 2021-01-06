@@ -26,4 +26,4 @@ jobs:
         path: draft-ietf-gnap-core-protocol.html
     - name: Call Netlify Deploy
       run: |
-        curl -X POST -d ${{ artifact_tag }} "https://api.netlify.com/build_hooks/5ff5d01dbf0689110ba61737"
+        curl -X POST -d ${{ env.artifact_tag }} "https://api.netlify.com/build_hooks/5ff5d01dbf0689110ba61737"
