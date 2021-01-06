@@ -18,7 +18,7 @@ with urllib.request.urlopen(urlbase) as url:
             print('Downloading artifact %s' % artifact_tag)
             
             req = urllib.request.Request(a['archive_download_url'], headers={
-                'Authorization: Bearer ' + token
+                'Authorization': 'Bearer ' + token
             })
             
             with urllib.request.urlretrieve(req) as local_filename, headers:
