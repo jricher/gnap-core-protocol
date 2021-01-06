@@ -22,7 +22,7 @@ jobs:
     - name: Archive rendered site
       uses: actions/upload-artifact@v2
       with:
-        name: ${{ artifact_tag }}
+        name: ${{ env.artifact_tag }}
         path: draft-ietf-gnap-core-protocol.html
     - name: Call Netlify Deploy
       run: |
