@@ -16,7 +16,7 @@ with urllib.request.urlopen(urlbase) as url:
     for a in data['artifacts']:
         if a['name'] == artifact_tag:
             print('Downloading artifact %s' % artifact_tag)
-            
+            print(a)
             req = urllib.request.Request(a['archive_download_url'], headers={
                 'Authorization': 'Bearer ' + token
             })
