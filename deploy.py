@@ -33,7 +33,7 @@ if artifact_tag:
                         z.extractall('public')
                         print('Extracted files')
                         
-                        comment = 'Preview automatically deployed to: %s' % os.environ['DEPLOY_URL']
+                        comment = 'Preview automatically deployed to: %s/draft-ietf-gnap-core-protocol.html' % os.environ['DEPLOY_URL']
                         body = {'body': comment}
                         
                         print('Sending comment...')
