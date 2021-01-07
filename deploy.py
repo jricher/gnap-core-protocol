@@ -2,6 +2,7 @@
 
 import urllib.request, json 
 import os
+import zipfile
 
 print(os.environ)
 
@@ -21,5 +22,8 @@ with urllib.request.urlopen(urlbase) as url:
                 'Authorization': 'Bearer ' + token
             })
             
-            with urllib.request.urlretrieve(req) as local_filename, headers:
-                print('Saved as: %s' % local_filename)
+            with urllib.request.urlopen(req) as dl
+                print('Downloaded file, extracting...')
+                z = zipfile.ZipFile(dl)
+                z.extractall('public')
+                print('Extracted files')
