@@ -85,6 +85,8 @@ normative:
 
 --- abstract
 
+BOOP
+
 This document defines a mechanism for delegating authorization to a
 piece of software, and conveying that delegation to the software. This
 delegation can include access to a set of APIs as well as information
