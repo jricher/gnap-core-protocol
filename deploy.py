@@ -7,7 +7,9 @@ from io import BytesIO
 
 print(os.environ)
 
-artifact_tag = os.environ['INCOMING_HOOK_BODY']
+gh = json.loads(os.environ['INCOMING_HOOK_BODY'])
+print(gh)
+artifact_tag = gh['artifact_tag']
 token = os.environ['GITHUB_TOKEN']
 
 urlbase = 'https://api.github.com/repos/jricher/gnap-core-protocol/actions/artifacts'
