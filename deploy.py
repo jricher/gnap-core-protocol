@@ -34,11 +34,12 @@ if artifact_tag:
                         print('Extracted files')
                         
                         comment = 'Preview automatically deployed to: %s' % os.environ['DEPLOY_URL']
-                        body = {body: comment}
+                        body = {'body': comment}
                         
                         print('Sending comment...')
                         comreq = urllib.request.Request(gh['comments_url'], headers={
-                            'Authorization': 'Bearer ' + token
-                        })
+                            'Authorization': 'Bearer ' + token,
+                            'Content-Type': 'application/json'
+                        }, data=json.dumps(body))
                         with urllib.request.urlopen(comreq) as c:
                             print('Comment posted.')
