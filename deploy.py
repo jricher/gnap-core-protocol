@@ -32,3 +32,13 @@ if artifact_tag:
                     with zipfile.ZipFile(BytesIO(dl.read())) as z:
                         z.extractall('public')
                         print('Extracted files')
+                        
+                        comment = 'Preview automatically deployed to: %s' % os.environ['DEPLOY_URL']
+                        body = {body: comment}
+                        
+                        print('Sending comment...')
+                        comreq = urllib.request.Request(gh['comments_url'], headers={
+                            'Authorization': 'Bearer ' + token
+                        })
+                        with urllib.request.urlopen(comreq) as c:
+                            print('Comment posted.')
