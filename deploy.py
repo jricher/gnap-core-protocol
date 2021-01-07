@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import urllib
+import urllib.request, urllib.parse
 import json 
 import os
 import zipfile
