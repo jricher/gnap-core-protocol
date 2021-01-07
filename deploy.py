@@ -40,6 +40,6 @@ if artifact_tag:
                         comreq = urllib.request.Request(gh['comments_url'], headers={
                             'Authorization': 'Bearer ' + token,
                             'Content-Type': 'application/json'
-                        }, data=json.dumps(body))
+                        }, data=json.dumps(body).encode('utf-8'))
                         with urllib.request.urlopen(comreq) as c:
                             print('Comment posted.')
