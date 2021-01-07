@@ -22,7 +22,7 @@ with urllib.request.urlopen(urlbase) as url:
                 'Authorization': 'Bearer ' + token
             })
             
-            with urllib.request.urlopen(req) as dl
+            with urllib.request.urlopen(req) as dl:
                 print('Downloaded file, extracting...')
                 z = zipfile.ZipFile(dl)
                 z.extractall('public')
