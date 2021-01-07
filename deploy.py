@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 
-import urllib.request, json 
+import urllib
+import json 
 import os
 import zipfile
 from io import BytesIO
 
 print(os.environ)
 
-gh = json.loads(os.environ['INCOMING_HOOK_BODY'])
+gh = json.loads(urllib.parse.unquote(os.environ['INCOMING_HOOK_BODY']))
 print(gh)
 artifact_tag = gh['artifact_tag']
 token = os.environ['GITHUB_TOKEN']
