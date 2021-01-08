@@ -2,5 +2,5 @@
 
 ./build.sh
 
-mkdir public
-cp draft-ietf-core-gnap-protocol.html public/index.html
+mkdir publish
+cp draft-ietf-gnap-core-protocol.html publish/index.html
