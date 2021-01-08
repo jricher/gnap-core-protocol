@@ -81,6 +81,7 @@ piece of software, and conveying that delegation to the software. This
 delegation can include access to a set of APIs as well as information
 passed directly to the software.
 
+Scoobidy boop boop de doo.
 
 --- middle
 
