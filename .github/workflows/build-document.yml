@@ -1,0 +1,29 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the artifacts with the docker image
+      run: docker-compose up
+    - name: Create a random container variable
+      run: |
+        echo "artifact_tag=`openssl rand -hex 12`" >> $GITHUB_ENV
+    - name: Archive rendered site
+      uses: actions/upload-artifact@v2
+      with:
+        name: ${{ env.artifact_tag }}
+        path: draft-ietf-gnap-core-protocol.html
+    - name: Call Netlify Deploy
+      run: |
+        curl -X POST -d "{\"artifact_tag\": \"${{ env.artifact_tag }}\", \"comments_url\": \"${{ github.event.pull_request.comments_url }}\"}" "https://api.netlify.com/build_hooks/5ff5d01dbf0689110ba61737"
